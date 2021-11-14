@@ -5,6 +5,6 @@
         LIFTING_BODY,
         HYPERSONIC,
         HIGH_ALTITUDE,
-        VTOL
+        VTOL,
     }
 }

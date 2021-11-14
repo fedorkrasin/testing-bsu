@@ -5,6 +5,6 @@
         UNCLASSIFIED,
         CONFIDENTIAL,
         SECRET,
-        TOP_SECRET
+        TOP_SECRET,
     }
 }

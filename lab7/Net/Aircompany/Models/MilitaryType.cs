@@ -4,6 +4,6 @@
     {
         FIGHTER,
         BOMBER,
-        TRANSPORT
+        TRANSPORT,
     }
 }

@@ -7,7 +7,7 @@ namespace Aircompany
 {
     public class Runner
     {
-        public static List<Plane> planes = new List<Plane>() {
+        private static List<Plane> _planes = new List<Plane>() {
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
             new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -25,15 +25,12 @@ namespace Aircompany
     };
         public static void Main(string[] args)
         {
-            Airport airport = new Airport(planes);
-            Airport militaryAirport = new Airport(airport.GetMilitaryPlanes());
-            Airport passengerAirport = new Airport(airport.GetPassengersPlanes());
-            Console.WriteLine(militaryAirport
-                              .SortByMaxDistance()
-                              .ToString());
-            Console.WriteLine(passengerAirport
-                              .SortByMaxSpeed()
-                              .ToString());
+            var airport = new Airport(_planes);
+            var militaryAirport = new Airport(airport.GetMilitaryPlanes());
+            var passengerAirport = new Airport(airport.GetPassengersPlanes());
+            
+            Console.WriteLine(militaryAirport.SortByMaxDistance().ToString());
+            Console.WriteLine(passengerAirport.SortByMaxSpeed().ToString());
             Console.WriteLine(passengerAirport.GetPassengerPlaneWithMaxPassengersCapacity());           
         }
     }
