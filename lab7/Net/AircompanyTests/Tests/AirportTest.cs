@@ -45,6 +45,11 @@ namespace AircompanyTests.Tests
             new PassengerPlane("Airbus A330", 990, 14800, 80500, 222),
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
         };
+
+        private List<Plane> _transportMilitaryPlanes = new List<Plane>()
+        {
+            new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
+        };
         
         private PassengerPlane _planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
 
@@ -52,7 +57,7 @@ namespace AircompanyTests.Tests
         public void TestHasTransportMilitaryPlanes()
         {
             var airport = new Airport(_planes);
-            Assert.IsTrue(airport.GetTransportMilitaryPlanes().ToList().Count > 0);
+            Assert.AreEqual(airport.GetTransportMilitaryPlanes(), _transportMilitaryPlanes);
         }
 
         [Test]
@@ -66,7 +71,7 @@ namespace AircompanyTests.Tests
         public void TestSortByMaxLoadCapacity()
         {
             var airport = new Airport(_planes);
-            Assert.AreEqual(airport.SortByMaxLoadCapacity().GetPlanes().ToList(), _planesSortedByMaxLoadCapacity);
+            Assert.AreEqual(airport.SortByMaxLoadCapacity().GetPlanes(), _planesSortedByMaxLoadCapacity);
         }
     }
 }

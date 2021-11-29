@@ -17,30 +17,12 @@ namespace Aircompany
 
         public List<PassengerPlane> GetPassengersPlanes()
         {
-            var passengerPlanes = new List<PassengerPlane>();
-            foreach (var plane in _planes)
-            {
-                if (plane.GetType() == typeof(PassengerPlane))
-                {
-                    passengerPlanes.Add((PassengerPlane) plane);
-                }
-            }
-
-            return passengerPlanes;
+            return _planes.Where(plane => plane.GetType() == typeof(PassengerPlane)).Cast<PassengerPlane>().ToList();
         }
 
         public List<MilitaryPlane> GetMilitaryPlanes()
         {
-            var militaryPlanes = new List<MilitaryPlane>();
-            foreach (var plane in _planes)
-            {
-                if (plane.GetType() == typeof(MilitaryPlane))
-                {
-                    militaryPlanes.Add((MilitaryPlane) plane);
-                }
-            }
-
-            return militaryPlanes;
+            return _planes.Where(plane => plane.GetType() == typeof(MilitaryPlane)).Cast<MilitaryPlane>().ToList();
         }
 
         public PassengerPlane GetPassengerPlaneWithMaxPassengersCapacity()
@@ -50,16 +32,7 @@ namespace Aircompany
 
         public List<MilitaryPlane> GetTransportMilitaryPlanes()
         {
-            var transportMilitaryPlanes = new List<MilitaryPlane>();
-            foreach (var plane in GetMilitaryPlanes())
-            {
-                if (plane.GetType() == MilitaryType.TRANSPORT)
-                {
-                    transportMilitaryPlanes.Add(plane);
-                }
-            }
-
-            return transportMilitaryPlanes;
+            return GetMilitaryPlanes().Where(plane => plane.GetType() == MilitaryType.TRANSPORT).ToList();
         }
 
         public Airport SortByMaxDistance()
