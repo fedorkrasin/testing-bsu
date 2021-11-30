@@ -7,8 +7,8 @@ namespace lab8.Pages
     {
         public Page(IWebDriver webDriver, string entryUrl)
         {
-            this.WebDriver = webDriver;
-            this.EntryUrl = entryUrl;
+            WebDriver = webDriver;
+            EntryUrl = entryUrl;
             PageFactory.InitElements(webDriver, this);
         }
 
@@ -16,11 +16,11 @@ namespace lab8.Pages
 
         protected string EntryUrl { get; }
 
-        public string CurrentUrl => this.WebDriver.Url;
+        public string CurrentUrl => WebDriver.Url;
 
         public virtual Page OpenPage()
         {
-            this.WebDriver.Navigate().GoToUrl(this.EntryUrl);
+            WebDriver.Navigate().GoToUrl(EntryUrl);
 
             return this;
         }
