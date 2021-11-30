@@ -1,13 +1,14 @@
-﻿using Aircompany.Models;
-using Aircompany.Planes;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Aircompany;
+using Aircompany.Models;
+using Aircompany.Planes;
 
-namespace Aircompany
+namespace lab7
 {
     public class Runner
     {
-        private static List<Plane> _planes = new List<Plane>() {
+        private static List<Plane> _planes = new() {
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
             new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -23,7 +24,7 @@ namespace Aircompany
             new MilitaryPlane("F-22", 1550, 13000, 11000, MilitaryType.FIGHTER),
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
     };
-        public static void Main(string[] args)
+        public static void Main()
         {
             var airport = new Airport(_planes);
             var militaryAirport = new Airport(airport.GetMilitaryPlanes());

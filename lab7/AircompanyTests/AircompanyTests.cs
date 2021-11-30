@@ -1,16 +1,16 @@
-﻿using Aircompany;
+using System.Collections.Generic;
+using Aircompany;
 using Aircompany.Models;
 using Aircompany.Planes;
 using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
+using Plane = Aircompany.Planes.Plane;
 
-namespace AircompanyTests.Tests
+namespace AircompanyTests
 {
     [TestFixture]
     public class AirportTest
     {
-        private List<Plane> _planes = new List<Plane>
+        private List<Plane> _planes = new()
         {
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
@@ -28,7 +28,7 @@ namespace AircompanyTests.Tests
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
         };
 
-        private List<Plane> _planesSortedByMaxLoadCapacity = new List<Plane>
+        private List<Plane> _planesSortedByMaxLoadCapacity = new()
         {
             new MilitaryPlane("F-15", 1500, 12000, 10000, MilitaryType.FIGHTER),
             new MilitaryPlane("F-22", 1550, 13000, 11000, MilitaryType.FIGHTER),
@@ -46,12 +46,12 @@ namespace AircompanyTests.Tests
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
         };
 
-        private List<Plane> _transportMilitaryPlanes = new List<Plane>()
+        private List<Plane> _transportMilitaryPlanes = new()
         {
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
         };
         
-        private PassengerPlane _planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
+        private PassengerPlane _planeWithMaxPassengerCapacity = new("Boeing-747", 980, 16100, 70500, 242);
 
         [Test]
         public void TestHasTransportMilitaryPlanes()
