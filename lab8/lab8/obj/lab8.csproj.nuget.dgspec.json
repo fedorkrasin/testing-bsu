@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "DotNetSeleniumExtras.PageObjects": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.9.4, )"
@@ -57,6 +61,14 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[97.0.4692.2000-beta, )"
+            },
+            "SeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "SeleniumFramework": {
+              "target": "Package",
+              "version": "[1.0.6, )"
             },
             "coverlet.collector": {
               "target": "Package",
