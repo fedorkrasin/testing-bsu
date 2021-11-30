@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using lab8.Pages;
 using NUnit.Framework;
@@ -17,6 +18,7 @@ namespace lab8
             var option = new ChromeOptions();
             option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
             _driver = new ChromeDriver(option);
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
         }
 
         [Test]
