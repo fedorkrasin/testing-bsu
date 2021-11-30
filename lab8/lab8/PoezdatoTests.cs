@@ -19,9 +19,9 @@ namespace lab8
             var option = new ChromeOptions();
             option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
             _driver = new ChromeDriver(option);
-            // _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
+            
             var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            wait.Until( d => _driver.FindElements(By.Id("dir_from")).Count > 0 );
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("dir_from")));;
         }
 
         [Test]
