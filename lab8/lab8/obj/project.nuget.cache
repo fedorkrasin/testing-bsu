@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wXO+B0y1Utgst91ekqEbyjAKjPvJjHVP3QCtSouQtepnupj6X3UozjPsc4hgrZy+7OSk80lUi+oZWXHihWl8rQ==",
+  "dgSpecHash": "X6HjkWcA2D37yvBirqgW0wPE89nw6Pfc3R8RVMcNCxzqbyXHXOzF9IwsISM+SjSk/ulPzRt2mjVk1dETSBEz0Q==",
   "success": true,
   "projectFilePath": "D:\\Univer\\lab8\\lab8\\lab8.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,7 @@
     "C:\\Users\\fedor.krasin\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\fedor.krasin\\.nuget\\packages\\selenium.support\\3.141.0\\selenium.support.3.141.0.nupkg.sha512",
     "C:\\Users\\fedor.krasin\\.nuget\\packages\\selenium.webdriver\\4.1.0\\selenium.webdriver.4.1.0.nupkg.sha512",
-    "C:\\Users\\fedor.krasin\\.nuget\\packages\\selenium.webdriver.chromedriver\\97.0.4692.2000-beta\\selenium.webdriver.chromedriver.97.0.4692.2000-beta.nupkg.sha512",
+    "C:\\Users\\fedor.krasin\\.nuget\\packages\\selenium.webdriver.chromedriver\\96.0.4664.4500\\selenium.webdriver.chromedriver.96.0.4664.4500.nupkg.sha512",
     "C:\\Users\\fedor.krasin\\.nuget\\packages\\seleniumextras.waithelpers\\1.0.2\\seleniumextras.waithelpers.1.0.2.nupkg.sha512",
     "C:\\Users\\fedor.krasin\\.nuget\\packages\\seleniumframework\\1.0.6\\seleniumframework.1.0.6.nupkg.sha512",
     "C:\\Users\\fedor.krasin\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",

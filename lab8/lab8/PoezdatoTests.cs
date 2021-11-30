@@ -24,7 +24,22 @@ namespace lab8
         {
             var homePage = new HomePage(_driver).OpenPage();
             
-            Assert.Pass();
+            homePage.EnterFromPlace("Minsk")
+                .EnterToPlace("Baranovichi")
+                .SelectDate("16.12.2021")
+                .CloseDateField()
+                .SearchTrips();
+
+            var expectedPageUrl = "https://poezdato.net/raspisanie-poezdov/minsk--baranovichi/16.12.2021/";
+            var expectedPage = new Page(_driver, expectedPageUrl).OpenPage();
+            
+            Assert.AreEqual(homePage.CurrentUrl, expectedPage.CurrentUrl);
+        }
+        
+        [TearDown]
+        public void CloseDriver()
+        {
+            _driver.Close();
         }
     }
 }

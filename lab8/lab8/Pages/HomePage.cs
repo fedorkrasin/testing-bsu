@@ -12,7 +12,7 @@ namespace lab8.Pages
         public IWebElement ToPlaceField => FindBy(By.Id("dir_where"));
         public IWebElement DateField => FindBy(By.Id("dir_date"));
         public IWebElement FindButton => FindBy(By.Id("dir_submit"));
-        
+
         public HomePage EnterFromPlace(string place)
         {
             FromPlaceField.SendKeys(place);
@@ -38,12 +38,19 @@ namespace lab8.Pages
         {
             return new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5)).Until(driver => driver.FindElement(key));
         }
+        
+        public HomePage CloseDateField()
+        {
+            ToPlaceField.Click();
+
+            return this;
+        }
 
         public void SearchTrips()
         {
             FindButton.Click();
         }
-        
+
         public override HomePage OpenPage()
         {
             WebDriver.Navigate().GoToUrl(EntryUrl);
