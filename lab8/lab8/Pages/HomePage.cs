@@ -7,19 +7,11 @@ namespace lab8.Pages
     public class HomePage : Page
     {
         public HomePage(IWebDriver webDriver) : base(webDriver, "https://poezdato.net/") { }
-
-        public IWebElement Frame => FindBy(By.Id("cmp-iframe"));
+        
         public IWebElement FromPlaceField => FindBy(By.Id("dir_from"));
         public IWebElement ToPlaceField => FindBy(By.Id("dir_where"));
         public IWebElement DateField => FindBy(By.Id("dir_date"));
         public IWebElement FindButton => FindBy(By.Id("dir_submit"));
-
-        public HomePage ClickFrame()
-        {
-            Frame.Click();
-
-            return this;
-        }
 
         public HomePage EnterFromPlace(string place)
         {
@@ -49,15 +41,12 @@ namespace lab8.Pages
         
         public HomePage CloseDateField()
         {
-            // FromPlaceField.Click();
-
             DateField.SendKeys(Keys.Return);
             return this;
         }
 
         public void SearchTrips()
         {
-            // FindButton.Click();
             FindButton.SendKeys(Keys.Return);
         }
 
