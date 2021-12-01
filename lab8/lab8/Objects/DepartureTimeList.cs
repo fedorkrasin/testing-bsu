@@ -48,7 +48,6 @@ namespace lab8.Objects
 
         private int GetHour(string departureTime)
         {
-            Console.WriteLine(departureTime);
             return int.Parse(departureTime[..2]);
         }
 
