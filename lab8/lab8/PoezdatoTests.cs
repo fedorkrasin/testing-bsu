@@ -1,17 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using Framework.Driver.Support;
-using Framework.Waiter;
 using lab8.Objects;
 using lab8.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium.Support.UI;
 
 namespace lab8
 {
