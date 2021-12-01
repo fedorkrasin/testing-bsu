@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using Framework.Driver.Support;
+using Framework.Waiter;
 using lab8.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -23,11 +24,13 @@ namespace lab8
             option.AddArguments("--headless", "--window-size=1920,937");
             _driver = new ChromeDriver(option);
             
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            // _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 
             // var element = _driver.FindElement(By.Id("dir_from"));
             // var actions = new Actions(_driver);
             // actions.MoveToElement(element);
+            
+            Thread.Sleep(10000);
         }
 
         [Test]
@@ -39,8 +42,6 @@ namespace lab8
             // var actions = new Actions(_driver);
             // actions.MoveToElement(element);
             // actions.Perform();
-
-            _driver.ExecuteJavaScript("window.scrollBy(0,500)");
 
             homePage.EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
