@@ -30,7 +30,7 @@ namespace lab8
             // var actions = new Actions(_driver);
             // actions.MoveToElement(element);
             
-            Thread.Sleep(200000);
+            Thread.Sleep(2000);
         }
 
         [Test]
