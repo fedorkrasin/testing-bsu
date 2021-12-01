@@ -43,7 +43,8 @@ namespace lab8
             // actions.MoveToElement(element);
             // actions.Perform();
 
-            homePage.EnterFromPlace("Minsk")
+            homePage.ClickFrame()
+                .EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
                 .SelectDate("16.12.2021")
                 .CloseDateField()
