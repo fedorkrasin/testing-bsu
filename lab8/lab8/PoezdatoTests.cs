@@ -1,10 +1,12 @@
 using System;
 using System.Threading;
+using Framework.Driver.Support;
 using lab8.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 
 namespace lab8
@@ -33,10 +35,12 @@ namespace lab8
         {
             var homePage = new HomePage(_driver).OpenPage();
 
-            var element = homePage.FromPlaceField;
-            var actions = new Actions(_driver);
-            actions.MoveToElement(element);
-            actions.Perform();
+            // var element = homePage.FromPlaceField;
+            // var actions = new Actions(_driver);
+            // actions.MoveToElement(element);
+            // actions.Perform();
+
+            _driver.ExecuteJavaScript("window.scrollBy(0,500)");
 
             homePage.EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
