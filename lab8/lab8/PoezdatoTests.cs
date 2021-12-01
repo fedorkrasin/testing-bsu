@@ -47,7 +47,7 @@ namespace lab8
                 .EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
                 .SelectDate("16.12.2021")
-                .CloseDateField()
+                // .CloseDateField()
                 .SearchTrips();
 
             var expectedPageUrl = "https://poezdato.net/raspisanie-poezdov/minsk--baranovichi/16.12.2021/";
