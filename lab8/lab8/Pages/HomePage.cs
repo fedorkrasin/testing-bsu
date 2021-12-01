@@ -49,7 +49,7 @@ namespace lab8.Pages
         
         public HomePage CloseDateField()
         {
-            ToPlaceField.Click();
+            FromPlaceField.Click();
 
             return this;
         }

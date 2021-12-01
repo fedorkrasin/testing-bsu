@@ -47,7 +47,6 @@ namespace lab8
                 .EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
                 .SelectDate("16.12.2021")
-                .ClickFrame()
                 .CloseDateField()
                 .SearchTrips();
 
