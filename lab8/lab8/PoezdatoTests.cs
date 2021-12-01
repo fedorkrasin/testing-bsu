@@ -17,7 +17,7 @@ namespace lab8
         public void InitDriver()
         {
             var option = new ChromeOptions();
-            option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+            option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1400,600");
             _driver = new ChromeDriver(option);
             
             _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(20);
