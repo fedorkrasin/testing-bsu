@@ -16,21 +16,18 @@ namespace lab8.Pages
         public HomePage EnterFromPlace(string place)
         {
             FromPlaceField.SendKeys(place);
-
             return this;
         }
 
         public HomePage EnterToPlace(string place)
         {
             ToPlaceField.SendKeys(place);
-
             return this;
         }
 
         public HomePage SelectDate(string date)
         {
             DateField.SendKeys(date);
-
             return this;
         }
         
@@ -45,15 +42,15 @@ namespace lab8.Pages
             return this;
         }
 
-        public void SearchTrips()
+        public HomePage SearchTrips()
         {
             FindButton.SendKeys(Keys.Return);
+            return this;
         }
 
         public override HomePage OpenPage()
         {
             WebDriver.Navigate().GoToUrl(EntryUrl);
-
             return this;
         }
     }
