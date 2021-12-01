@@ -23,13 +23,6 @@ namespace lab8
             var option = new ChromeOptions();
             option.AddArguments("--headless", "--window-size=1920,937");
             _driver = new ChromeDriver(option);
-            
-            // _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
-
-            // var element = _driver.FindElement(By.Id("dir_from"));
-            // var actions = new Actions(_driver);
-            // actions.MoveToElement(element);
-            
             Thread.Sleep(2000);
         }
 
@@ -38,16 +31,10 @@ namespace lab8
         {
             var homePage = new HomePage(_driver).OpenPage();
 
-            // var element = homePage.FromPlaceField;
-            // var actions = new Actions(_driver);
-            // actions.MoveToElement(element);
-            // actions.Perform();
-
-            homePage.ClickFrame()
-                .EnterFromPlace("Minsk")
+            homePage.EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
                 .SelectDate("16.12.2021")
-                // .CloseDateField()
+                .CloseDateField()
                 .SearchTrips();
 
             var expectedPageUrl = "https://poezdato.net/raspisanie-poezdov/minsk--baranovichi/16.12.2021/";
