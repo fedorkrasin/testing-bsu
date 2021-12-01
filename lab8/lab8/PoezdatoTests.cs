@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Framework.Driver.Support;
 using Framework.Waiter;
+using lab8.Objects;
 using lab8.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -23,7 +26,6 @@ namespace lab8
             var option = new ChromeOptions();
             option.AddArguments("--headless", "--window-size=1920,937");
             _driver = new ChromeDriver(option);
-            Thread.Sleep(2000);
         }
 
         [Test]
@@ -41,6 +43,16 @@ namespace lab8
             var expectedPage = new Page(_driver, expectedPageUrl).OpenPage();
             
             Assert.AreEqual(homePage.CurrentUrl, expectedPage.CurrentUrl);
+        }
+
+        [Test]
+        public void TrainsAreInOrderOfDepartureTest()
+        {
+            var timetablePage = new TimetablePage(_driver).OpenPage();
+
+            var departureTimeList = new DepartureTimeList(timetablePage.DepartureTimeList);
+            
+            Assert.IsTrue(departureTimeList.AreElementsInOrder());
         }
         
         [TearDown]

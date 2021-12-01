@@ -30,12 +30,7 @@ namespace lab8.Pages
             DateField.SendKeys(date);
             return this;
         }
-        
-        private IWebElement FindBy(By key)
-        {
-            return new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5)).Until(driver => driver.FindElement(key));
-        }
-        
+
         public HomePage CloseDateField()
         {
             DateField.SendKeys(Keys.Return);
@@ -52,6 +47,11 @@ namespace lab8.Pages
         {
             WebDriver.Navigate().GoToUrl(EntryUrl);
             return this;
+        }
+        
+        private IWebElement FindBy(By key)
+        {
+            return new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5)).Until(driver => driver.FindElement(key));
         }
     }
 }
