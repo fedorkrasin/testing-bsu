@@ -24,7 +24,7 @@ namespace lab8
         public void InitDriver()
         {
             var option = new ChromeOptions();
-            option.AddArguments("--headless", "--window-size=1920,937");
+            option.AddArguments("--headless", "--window-size=1920,1920");
             _driver = new ChromeDriver(option);
         }
 
