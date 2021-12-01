@@ -4,6 +4,7 @@ using lab8.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace lab8
@@ -21,13 +22,22 @@ namespace lab8
             _driver = new ChromeDriver(option);
             
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+
+            // var element = _driver.FindElement(By.Id("dir_from"));
+            // var actions = new Actions(_driver);
+            // actions.MoveToElement(element);
         }
 
         [Test]
         public void SearchTrainsTest()
         {
             var homePage = new HomePage(_driver).OpenPage();
-            
+
+            var element = homePage.FromPlaceField;
+            var actions = new Actions(_driver);
+            actions.MoveToElement(element);
+            actions.Perform();
+
             homePage.EnterFromPlace("Minsk")
                 .EnterToPlace("Baranovichi")
                 .SelectDate("16.12.2021")
