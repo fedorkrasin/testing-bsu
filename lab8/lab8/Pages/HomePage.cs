@@ -49,14 +49,16 @@ namespace lab8.Pages
         
         public HomePage CloseDateField()
         {
-            FromPlaceField.Click();
+            // FromPlaceField.Click();
 
+            DateField.SendKeys(Keys.Return);
             return this;
         }
 
         public void SearchTrips()
         {
-            FindButton.Click();
+            // FindButton.Click();
+            FindButton.SendKeys(Keys.Return);
         }
 
         public override HomePage OpenPage()
