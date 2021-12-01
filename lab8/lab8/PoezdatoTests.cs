@@ -21,6 +21,8 @@ namespace lab8
             _driver = new ChromeDriver(option);
             
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            var waitForElement = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+            waitForElement.Until(ExpectedConditions.ElementIsVisible(By.Id("dir_submit")));
         }
 
         [Test]
