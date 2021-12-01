@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
 
@@ -47,6 +48,7 @@ namespace lab8.Objects
 
         private int GetHour(string departureTime)
         {
+            Console.WriteLine(departureTime);
             return int.Parse(departureTime[..2]);
         }
 
