@@ -20,7 +20,7 @@ namespace lab8
             option.AddArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1400,600");
             _driver = new ChromeDriver(option);
             
-            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(20);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
         }
 
         [Test]
