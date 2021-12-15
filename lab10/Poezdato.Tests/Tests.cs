@@ -40,10 +40,17 @@ namespace Poezdato.Tests
         }
 
         [Test]
-        public void ReverseFromToButton()
+        public void ReverseFromToButtonTest()
         {
             var isReversed = _manager.CheckReverseFromToButton(new TripLocation("Baranovichi", "Minsk"));
             Assert.IsTrue(isReversed);
+        }
+        
+        [Test]
+        public void TrainsAreInOrderOfDepartureTest()
+        {
+            var areTrainsInOrder = _manager.AreTrainsInOrder();
+            Assert.IsTrue(areTrainsInOrder);
         }
     }
 }

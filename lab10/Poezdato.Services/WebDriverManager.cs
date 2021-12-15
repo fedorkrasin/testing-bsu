@@ -80,6 +80,13 @@ namespace Poezdato.Services
             return prevFromPlace == toPlace && prevToPlace == fromPlace;
         }
 
+        public bool AreTrainsInOrder()
+        {
+            var timetablePage = new TimetablePage(_webDriver).OpenPage();
+            var departureTimeList = new DepartureTimeList(timetablePage.DepartureTimeList);
+            return departureTimeList.AreElementsInOrder();
+        }
+
         public void DestroyDrive()
         {
             ChromeDriverEntity.CloseDriver();;
