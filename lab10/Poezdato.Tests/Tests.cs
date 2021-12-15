@@ -52,5 +52,12 @@ namespace Poezdato.Tests
             var areTrainsInOrder = _manager.AreTrainsInOrder();
             Assert.IsTrue(areTrainsInOrder);
         }
+
+        [Test]
+        public void NoTripFeaturesTest()
+        {
+            var url = _manager.NoTripFeatures();
+            Assert.AreEqual(url, "https://poezdato.net/");
+        }
     }
 }

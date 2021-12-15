@@ -29,7 +29,7 @@ namespace Poezdato.Services
 
             return homePage.CurrentUrl;
         }
-        
+
         public string PassTripAdvancedFeatures(TripLocation location, TripDate date, TripTime fromTime, TripTime toTime)
         {
             var homePage = new HomePage(_webDriver).OpenPage();
@@ -85,6 +85,13 @@ namespace Poezdato.Services
             var timetablePage = new TimetablePage(_webDriver).OpenPage();
             var departureTimeList = new DepartureTimeList(timetablePage.DepartureTimeList);
             return departureTimeList.AreElementsInOrder();
+        }
+        
+        public string NoTripFeatures()
+        {
+            var homePage = new HomePage(_webDriver).OpenPage();
+            homePage.SearchTrips();
+            return homePage.CurrentUrl;
         }
 
         public void DestroyDrive()
