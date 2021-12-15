@@ -1,4 +1,5 @@
 ﻿using System;
+using Framework.Driver.Support;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using Poezdato.Models;
@@ -72,7 +73,7 @@ namespace Poezdato.Services
             var prevToPlace = homePage.ToPlaceField.Text;
 
             homePage.PressReverseFromToButton();
-            
+
             var fromPlace = homePage.FromPlaceField.Text;
             var toPlace = homePage.ToPlaceField.Text;
 

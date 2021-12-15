@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Driver.Support;
+using OpenQA.Selenium;
 
 namespace Poezdato.PageObjects
 {
