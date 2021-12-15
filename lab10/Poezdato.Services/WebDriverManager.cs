@@ -50,7 +50,8 @@ namespace Poezdato.Services
         {
             var homePage = new HomePage(_webDriver).OpenPage();
 
-            homePage.OpenAdvancedSearch()
+            homePage.IFRAME()
+                .OpenAdvancedSearch()
                 .EnterFromPlace(location.FromPlace)
                 .EnterToPlace(location.ToPlace)
                 .SelectDate(date.DepartureDay)

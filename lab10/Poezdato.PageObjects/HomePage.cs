@@ -1,4 +1,5 @@
-﻿using Framework.Driver.Support;
+﻿using System;
+using Framework.Driver.Support;
 using OpenQA.Selenium;
 
 namespace Poezdato.PageObjects
@@ -68,6 +69,13 @@ namespace Poezdato.PageObjects
         public HomePage SearchTrips()
         {
             FindButton.SendKeys(Keys.Return);
+            return this;
+        }
+
+        public HomePage IFRAME()
+        {
+            var s = FindElementBy(By.TagName("iframe"));
+            Console.WriteLine(s.Text);
             return this;
         }
 
