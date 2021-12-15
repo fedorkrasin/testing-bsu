@@ -11,7 +11,7 @@ namespace Poezdato.WebDriver
         private static IWebDriver InitializeWebDriver()
         {
             var options = new ChromeOptions();
-            // options.AddArguments("--headless");
+            options.AddArguments("--headless");
             var chromeDriver = new ChromeDriver(options);
             chromeDriver.Manage().Timeouts().ImplicitWait.Add(TimeSpan.FromSeconds(30));
             chromeDriver.Manage().Window.Maximize();
