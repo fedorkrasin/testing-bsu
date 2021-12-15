@@ -10,6 +10,9 @@ namespace Poezdato.PageObjects
         public IWebElement ToPlaceField => FindElementBy(By.Id("dir_where"));
         public IWebElement DateField => FindElementBy(By.Id("dir_date"));
         public IWebElement FindButton => FindElementBy(By.Id("dir_submit"));
+        public IWebElement AdvancedSearchButton => FindElementBy(By.Id("trigger_advanced_1"));
+        public IWebElement DirectionTimeFrom => FindElementBy(By.Id("dir_time_from"));
+        public IWebElement DirectionTimeTo => FindElementBy(By.Id("dir_time_to"));
 
         public HomePage EnterFromPlace(string place)
         {
@@ -32,6 +35,24 @@ namespace Poezdato.PageObjects
         public HomePage CloseDateField()
         {
             DateField.SendKeys(Keys.Return);
+            return this;
+        }
+
+        public HomePage OpenAdvancedSearch()
+        {
+            AdvancedSearchButton.Click();
+            return this;
+        }
+
+        public HomePage EnterFromTime(string time)
+        {
+            DirectionTimeFrom.SendKeys(time);
+            return this;
+        }
+        
+        public HomePage EnterToTime(string time)
+        {
+            DirectionTimeTo.SendKeys(time);
             return this;
         }
 
