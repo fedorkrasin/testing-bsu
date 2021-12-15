@@ -72,13 +72,6 @@ namespace Poezdato.PageObjects
             return this;
         }
 
-        public HomePage IFRAME()
-        {
-            var s = FindElementBy(By.TagName("iframe"));
-            Console.WriteLine(s.Text);
-            return this;
-        }
-
         public override HomePage OpenPage()
         {
             WebDriver.Navigate().GoToUrl(EntryUrl);
