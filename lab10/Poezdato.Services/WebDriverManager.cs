@@ -28,9 +28,9 @@ namespace Poezdato.Services
             return homePage.CurrentUrl;
         }
 
-        public bool VerifyTrainsPage(string url, TripLocation location, TripDate date)
+        public void DestroyDrive()
         {
-            // return HomePage
+            ChromeDriverEntity.CloseDriver();;
         }
     }
 }
