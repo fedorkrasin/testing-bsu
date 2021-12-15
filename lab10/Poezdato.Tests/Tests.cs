@@ -29,5 +29,21 @@ namespace Poezdato.Tests
                 new TripTime("22:00"), new TripTime("23:30"));
             Assert.AreEqual(url, "https://poezdato.net/raspisanie-poezdov/baranovichi--minsk/15.12.2021/22.00/23.30/");
         }
+
+        [Test]
+        public void TrainNotAvailabilityTest()
+        {
+            var isNotAvailable = _manager.CheckTrainAvailability(new TripLocation("Baranovichi", "Minsk"),
+                new TripDate("15.12.2021"),
+                new TripTime("22:00"), new TripTime("22:01"), "По вашему запросу поезда не найдены");
+            Assert.IsTrue(isNotAvailable);
+        }
+
+        [Test]
+        public void ReverseFromToButton()
+        {
+            var isReversed = _manager.CheckReverseFromToButton(new TripLocation("Baranovichi", "Minsk"));
+            Assert.IsTrue(isReversed);
+        }
     }
 }

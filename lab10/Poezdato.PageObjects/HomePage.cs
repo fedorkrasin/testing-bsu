@@ -13,6 +13,8 @@ namespace Poezdato.PageObjects
         public IWebElement AdvancedSearchButton => FindElementBy(By.Id("trigger_advanced_1"));
         public IWebElement DirectionTimeFrom => FindElementBy(By.Id("dir_time_from"));
         public IWebElement DirectionTimeTo => FindElementBy(By.Id("dir_time_to"));
+        public IWebElement ErrorInner => FindElementBy(By.ClassName("error_inner")).FindElement(By.TagName("p"));
+        public IWebElement ReverseFromToButton => FindElementBy(By.Id("reverce"));
 
         public HomePage EnterFromPlace(string place)
         {
@@ -53,6 +55,12 @@ namespace Poezdato.PageObjects
         public HomePage EnterToTime(string time)
         {
             DirectionTimeTo.SendKeys(time);
+            return this;
+        }
+
+        public HomePage PressReverseFromToButton()
+        {
+            ReverseFromToButton.Click();
             return this;
         }
 
